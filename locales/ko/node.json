@@ -1,0 +1,12 @@
+{
+  "ethermine" : {
+    "label" : {
+      "api": "API 종류",
+      "action": "API Action"
+    },
+    "desc" : {
+      "api": "Pool, Miner, Worker 중 하나를 입력하세요.",
+      "action": "Action Path, Readme 를 참고하세요."
+    }
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "ethermine" : {
+    "label" : {
+      "api": "API",
+      "action": "Action"
+    },
+    "desc" : {
+      "api": "One of Pool, Miner, Worker.",
+      "action": "Please refer to the readme."
+    }
+  }
+}
