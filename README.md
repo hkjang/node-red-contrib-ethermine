@@ -19,11 +19,11 @@ command in your Node-RED user directory, typically `~/.node-red`
 ```js
 // msg.payload = {};
 // msg.payload.api = 'miner'; //pool or miner or worker
-// msg.payload.action = 'dashboard'; // if miner then action is history, poyouts, rounds, settings, currnetStats
+// msg.payload.action = 'dashboard'; // if api is miner then action is history, poyouts, rounds, settings, currnetStats
 // msg.payload.api = 'pool'; //pool or miner or worker
-// msg.payload.action = 'poolStats'; // if pool then action is poolStats, blocksHistory, networkStats, serversHistory
+// msg.payload.action = 'poolStats'; // if api is pool then action is poolStats, blocksHistory, networkStats, serversHistory
 // msg.payload.api = 'worker'; //pool or miner or worker
-// msg.payload.action = 'workers'; // if pool then action is worker, history, currentStats, monitor
+// msg.payload.action = 'workers'; // if api is worker then action is worker, history, currentStats, monitor
 
 return msg;
 ```
