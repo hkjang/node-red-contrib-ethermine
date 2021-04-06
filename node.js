@@ -1,4 +1,5 @@
-const axios = require("axios")
+const axios = require("axios");
+const url = 'https://api.ethermine.org';
 module.exports = function (RED) {
     function FunctionNode(n) {
         RED.nodes.createNode(this, n);
@@ -21,9 +22,6 @@ module.exports = function (RED) {
                     node[i] = node[i] || msg[i];
                 }
             }
-            if(!node.url){
-                node.url = 'https://api.ethermine.org';
-            }
 
             node.options = {};
             // node.options.headers = {};
@@ -42,37 +40,37 @@ module.exports = function (RED) {
             }
             if(node.payload.api.toLowerCase() === 'pool'){
                 if(node.payload.action === 'poolStats'){
-                    node.url += '/poolStats';
+                    node.url = url +  '/poolStats';
                 }else if(node.payload.action === 'blocksHistory'){
-                    node.url += '/blocks/history';
+                    node.url = url +  '/blocks/history';
                 }else if(node.payload.action === 'networkStats'){
-                    node.url += '/networkStats';
+                    node.url = url +  '/networkStats';
                 }else if(node.payload.action === 'serversHistory'){
-                    node.url += '/servers/history';
+                    node.url = url +  '/servers/history';
                 }
             }else if(node.payload.api.toLowerCase() === 'miner'){
                 if(node.payload.action === 'dashboard'){
-                    node.url += '/miner/' + node.miner + '/dashboard';
+                    node.url = url +  '/miner/' + node.miner + '/dashboard';
                 }else if(node.payload.action === 'history'){
-                    node.url += '/miner/' + node.miner + '/history';
+                    node.url = url +  '/miner/' + node.miner + '/history';
                 }else if(node.payload.action === 'payouts'){
-                    node.url += '/miner/' + node.miner + '/payouts';
+                    node.url = url +  '/miner/' + node.miner + '/payouts';
                 }else if(node.payload.action === 'rounds'){
-                    node.url += '/miner/' + node.miner + '/rounds';
+                    node.url = url +  '/miner/' + node.miner + '/rounds';
                 }else if(node.payload.action === 'settings'){
-                    node.url += '/miner/' + node.miner + '/settings';
+                    node.url = url +  '/miner/' + node.miner + '/settings';
                 }else if(node.payload.action === 'currentStats'){
-                    node.url += '/miner/' + node.miner + '/currentStats';
+                    node.url = url +  '/miner/' + node.miner + '/currentStats';
                 }
             }else if(node.payload.api.toLowerCase() === 'worker'){
                 if(node.payload.action === 'workers'){
-                    node.url += '/miner/' + node.miner + '/workers';
+                    node.url = url +  '/miner/' + node.miner + '/workers';
                 }else if(node.payload.action === 'history'){
-                    node.url += '/miner/' + node.miner + '/worker/' + node.worker + '/history';
+                    node.url = url +  '/miner/' + node.miner + '/worker/' + node.worker + '/history';
                 }else if(node.payload.action === 'currentStats'){
-                    node.url += '/miner/' + node.miner + '/worker/' + node.worker +'/currentStats';
+                    node.url = url +  '/miner/' + node.miner + '/worker/' + node.worker +'/currentStats';
                 }else if(node.payload.action === 'monitor'){
-                    node.url += '/miner/' + node.miner + '/worker/' + node.worker +'/monitor';
+                    node.url = url +  '/miner/' + node.miner + '/worker/' + node.worker +'/monitor';
                 }
             }
 
